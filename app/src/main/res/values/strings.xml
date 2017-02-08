@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TrombiDEP</string>
+    <string name="type_filter">Filtre</string>
+    <string name="tous">Tous</string>
+    <string name="loading">Chargement des données...</string>
+    <string name="noselect">Aucun résultat</string>
+
+    <string name="url_data">http://www.nosdeputes.fr/deputes/enmandat/xml</string>
+    <string name="url_photo">http://www.nosdeputes.fr/depute/photo/</string>
+    <string name="fic_cache">/deputes.xml</string>
+    <string name="errmaj">Mise à jour impossible</string>
+    <string name="err0">Erreur</string>
+    <string name="err1">Données inaccessibles</string>
+    <string name="err2">Problème réseau</string>
+    <string name="err3">Mode avion activé</string>
+</resources>

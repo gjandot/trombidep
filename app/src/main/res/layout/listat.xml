@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+android:orientation="vertical"
+android:id="@+id/tout"
+android:background="@color/fond">
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:gravity="center"
+		android:orientation="horizontal"
+		android:id="@+id/progress"
+		android:visibility="gone">
+		<ProgressBar
+			style="?android:attr/progressBarStyle"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"/>
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:text="@string/loading" />
+	</LinearLayout>
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:orientation="vertical"
+		android:id="@+id/liste">
+		<ListView android:id="@android:id/list"
+		android:layout_width="fill_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1"/>
+		<TextView android:id="@android:id/empty"
+			android:layout_width="wrap_content"
+			android:layout_height="0dp"
+			android:layout_weight="1"
+			android:background="@color/fond"
+			android:text="@string/noselect"
+			android:gravity="center"
+			android:layout_gravity="center"
+			android:visibility="gone"
+			android:drawableLeft="@drawable/perso"
+			android:drawablePadding="8dp"
+			android:textSize="18dp"/>
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:background="@color/fond">
+		<ImageButton
+			android:id="@+id/btnH"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:src="@drawable/sexe_h"
+			android:background="@color/fond"
+			android:padding="8dp"
+			android:contentDescription="Hommes"/>
+		<ImageButton
+			android:id="@+id/btnF"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:src="@drawable/sexe_f"
+			android:background="@color/fond"
+			android:padding="8dp"
+			android:contentDescription="Femmes"/>
+			<Spinner
+				android:id="@+id/spinner"
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent"
+				android:layout_weight="1"
+				android:contentDescription="Liste des groupes politiques"
+				android:background="@drawable/f_listederoul"
+				android:padding="2dp"
+				android:layout_margin="4dp"/>
+		</LinearLayout>
+		<FrameLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="2dp"
+			android:padding="4dp"
+			android:background="@color/fond">
+		<EditText android:id="@+id/search_box"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:hint="@string/type_filter"
+			android:inputType="textNoSuggestions"
+			android:maxLines="1"
+			android:singleLine="true"
+			android:contentDescription="@string/type_filter"/>
+		<ImageButton
+			android:id="@+id/clearfilter"
+			android:layout_width="32dp"
+			android:layout_height="32dp"
+			android:layout_marginRight="8dp"
+			android:layout_gravity="right|center_vertical"
+			android:background="@android:drawable/ic_menu_close_clear_cancel"
+			android:contentDescription="Remise à zéro du filtre"/>
+		</FrameLayout>
+	</LinearLayout>
+</LinearLayout>

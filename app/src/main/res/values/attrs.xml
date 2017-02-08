@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<declare-styleable name="ImageListPreference">
+<attr name="entryImages" format="reference"/>
+</declare-styleable>
+<declare-styleable name="SeekBarPreference">
+<attr name="min" format="integer"/>
+<attr name="incr" format="integer"/>
+</declare-styleable>
+<declare-styleable name="IconPreference">
+<attr name="icon" format="reference"/>
+</declare-styleable>
+</resources>

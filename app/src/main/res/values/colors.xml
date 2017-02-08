@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="colHomme" type="color">#FF444444</item>
+    <item name="colFemme" type="color">#FF666666</item>
+    <item name="fond" type="color">#FF000000</item>
+    <item name="err" type="color">#FFFF4444</item>
+</resources>
+
