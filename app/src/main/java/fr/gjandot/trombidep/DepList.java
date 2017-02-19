@@ -30,7 +30,6 @@ import android.os.StrictMode;
 import android.provider.Settings;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
@@ -213,7 +212,6 @@ public class DepList extends ListActivity
 		FileInputStream fis = new FileInputStream(new File(getCacheDir(), getResources().getString(R.string.fic_cache)));
 		xpp.setInput(fis, null);
 		// GESTION d'ERREUR !!!
-		Log.d("toto", "toto1");
 		int eventType = xpp.getEventType();
 		while (eventType != XmlPullParser.END_DOCUMENT) {
 			//if(eventType == XmlPullParser.START_DOCUMENT) {
@@ -262,7 +260,6 @@ public class DepList extends ListActivity
 			}
 			eventType = xpp.next();
 		}
-		Log.d("toto", "toto2");
 		Collections.sort(listat, new Depute.DepComparateur());
 	}
 
