@@ -30,6 +30,7 @@ import android.os.StrictMode;
 import android.provider.Settings;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
@@ -70,7 +71,7 @@ public class DepList extends ListActivity
 	private ListView mListView = null;
 	private EditText filterText = null;
 	private Spinner spinner = null;
-	private ImageButton imgbtnH=null, imgbtnF=null, imgclrFilt=null;
+	private ImageButton imgbtnH=null, imgbtnF=null, imgbtnR=null, imgclrFilt=null;
 	public static boolean vueH = true, vueF = true;
 	public static String filtreGroupe;
 	private static ArrayList<String> listeGroupes;
@@ -131,6 +132,13 @@ public class DepList extends ListActivity
 			}
 		});
 
+		imgbtnR = (ImageButton) findViewById(R.id.btnR);
+		imgbtnR.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				new Task().execute();
+			}
+		});												  
 		listeGroupes = new ArrayList<String>();
 		listeGroupes.add(getResources().getString(R.string.tous));
 
@@ -198,16 +206,17 @@ public class DepList extends ListActivity
 		factory.setNamespaceAware(true);
 		XmlPullParser xpp = factory.newPullParser();
 
+		if (is_date_very_old())
+		{
+			adapter.clearImageCache();
+		}
 		if (is_date_old()) {
 			if (downloadXML())
 			{
-				if (is_date_very_old())
-				{
-					adapter.clearImageCache();
-				}
 				save_date();
 			}
 		}
+
 
 		listat.clear();
 		FileInputStream fis = new FileInputStream(new File(getCacheDir(), getResources().getString(R.string.fic_cache)));
@@ -399,6 +408,7 @@ public class DepList extends ListActivity
 	class Task extends AsyncTask<String, Integer, Boolean> {
 		@Override
 		protected void onPreExecute() {
+			save_prefs(); //nécessaire en cas de "Refresh"									  
 			layout.setVisibility(View.VISIBLE);
 			liste.setVisibility(View.GONE);
 			threadErr = MSG_OK;
@@ -411,6 +421,7 @@ public class DepList extends ListActivity
 			liste.setVisibility(View.VISIBLE);
 
 			/* notification à l'UI de la fin du chargement */
+			Message msg = new Message(); // toujours bien recréer les messages														  
 			msg.arg1 = threadErr;
 			handler.sendMessage(msg);
 
@@ -426,7 +437,7 @@ public class DepList extends ListActivity
 
 
 	/* récepteur de la notification de la fin du chargement des données */
-	Message msg = new Message();
+
 	Handler handler = new Handler(new Handler.Callback() {
 
 		@Override
@@ -436,7 +447,7 @@ public class DepList extends ListActivity
 				read_prefs();
 				adapter.getFilter().filter(filterText.getText());
 				adapter.notifyDataSetChanged();
-				mListView.invalidate();
+				//mListView.invalidate();
 			}
 			else
 			{
@@ -528,7 +539,10 @@ public class DepList extends ListActivity
 	{
 		SharedPreferences mPrefs = getPreferences(MODE_PRIVATE);
 		long now = System.currentTimeMillis();
-		return (now - mPrefs.getLong(PREF_DATEMILLIS, 0) > H4);
+		Log.d("toto",""+ mPrefs.getLong(PREF_DATEMILLIS, 0));
+        Log.d("toto",""+ now);
+        Log.d("toto",""+ (now - mPrefs.getLong(PREF_DATEMILLIS, 0) > H4));
+        return (now - mPrefs.getLong(PREF_DATEMILLIS, 0) > H4);
 		/*
 		if (now- mPrefs.getLong(PREF_DATEMILLIS, 0) > H4) {
 			return true;

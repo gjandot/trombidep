@@ -74,6 +74,14 @@ android:background="@color/fond">
 				android:background="@drawable/f_listederoul"
 				android:padding="2dp"
 				android:layout_margin="4dp"/>
+			<ImageButton
+				android:id="@+id/btnR"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:src="@drawable/ic_refresh"
+				android:background="@color/fond"
+				android:padding="8dp"
+				android:contentDescription="Refresh"/>			   
 		</LinearLayout>
 		<FrameLayout
 			android:layout_width="fill_parent"
