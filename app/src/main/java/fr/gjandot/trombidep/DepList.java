@@ -30,7 +30,6 @@ import android.os.StrictMode;
 import android.provider.Settings;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
@@ -539,9 +538,6 @@ public class DepList extends ListActivity
 	{
 		SharedPreferences mPrefs = getPreferences(MODE_PRIVATE);
 		long now = System.currentTimeMillis();
-		Log.d("toto",""+ mPrefs.getLong(PREF_DATEMILLIS, 0));
-        Log.d("toto",""+ now);
-        Log.d("toto",""+ (now - mPrefs.getLong(PREF_DATEMILLIS, 0) > H4));
         return (now - mPrefs.getLong(PREF_DATEMILLIS, 0) > H4);
 		/*
 		if (now- mPrefs.getLong(PREF_DATEMILLIS, 0) > H4) {
