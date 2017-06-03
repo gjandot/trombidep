@@ -476,6 +476,15 @@ public class DepList extends ListActivity
 		{
 			imgbtnH.setImageResource(R.drawable.sexe_noh);
 		}
+
+		if (spinner.getAdapter().getCount() > 1)
+		{
+			spinner.setEnabled(true);
+		}
+		else
+		{
+			spinner.setEnabled(false);
+		}
 	}
 
 	@Override
