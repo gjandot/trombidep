@@ -95,7 +95,6 @@ android:background="@color/fond">
 			android:hint="@string/type_filter"
 			android:inputType="textNoSuggestions"
 			android:maxLines="1"
-			android:singleLine="true"
 			android:contentDescription="@string/type_filter"/>
 		<ImageButton
 			android:id="@+id/clearfilter"

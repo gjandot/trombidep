@@ -2,7 +2,7 @@
 
 Android application : interactive list of french "deputies" (members of parliament).
 
-Data extracted from http://www.nosdeputes.fr/ (see http://cpc.regardscitoyens.org/trac/wiki/API)
+Data extracted from https://www.nosdeputes.fr/ (see https://github.com/regardscitoyens/nosdeputes.fr/blob/master/doc/api.md)
 
 Personnal work (hobby).
 
@@ -12,7 +12,7 @@ Download APK : http://gjandot.free.fr/apk/trombidep.apk
 
 Application Android : trombinoscope interactif des députés français
 
-Données récupérées sur http://www.nosdeputes.fr (cf. http://cpc.regardscitoyens.org/trac/wiki/API)
+Données récupérées sur https://www.nosdeputes.fr (cf. https://github.com/regardscitoyens/nosdeputes.fr/blob/master/doc/api.md)
 
 Travail personnel (loisirs).
 

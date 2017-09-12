@@ -10,5 +10,4 @@ android {
         targetSdkVersion 21
     }
 
-
 }

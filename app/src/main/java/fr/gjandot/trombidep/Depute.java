@@ -8,6 +8,7 @@ public class Depute {
 	private String imgurl;
 	private String depurl;
 	private String circo;
+	private String numdpt;
 	private String grp;
 	private boolean sexe_H = true;
 
@@ -21,6 +22,7 @@ public class Depute {
 		this.grp = dep.grp;
 		this.sexe_H = dep.sexe_H;
 		this.circo = dep.circo;
+		this.numdpt = dep.numdpt;
 	}
 
 	public Depute()
@@ -42,7 +44,12 @@ public class Depute {
 	
 	public String getCirco() { return this.circo; }
 	public void setCirco(String circo) { this.circo = circo; }
-	
+
+	public String getNumDpt() { return this.numdpt; }
+	public void setNumDpt(String numdpt) { this.numdpt = numdpt; }
+
+	public String getLongCirco() { return this.circo + " (" + this.getNumDpt() + ")"; }
+
 	public void setSexe_H(boolean sexe_h) { this.sexe_H = sexe_h;}
 	public boolean isSexe_H() { return this.sexe_H; }
 

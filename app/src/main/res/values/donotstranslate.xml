@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TrombiDEP</string>
+
+    <string name="undeftxt">...</string>
+    <string name="url_data">https://www.nosdeputes.fr/deputes/enmandat/xml</string>
+    <string name="url_photo">https://www.nosdeputes.fr/depute/photo/</string>
+    <string name="fic_cache">/deputes.xml</string>
+</resources>

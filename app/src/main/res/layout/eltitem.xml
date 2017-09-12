@@ -23,11 +23,11 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:id="@+id/depgroupe" android:textSize="14sp"
-			android:textColor="#FFFFFF44"/>
+			android:textColor="@color/txt"/>
 		<TextView android:text="..."
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:id="@+id/depcirco" android:textSize="14sp"
-			android:textColor="#FFFFFF44"/>
+			android:textColor="@color/txt"/>
 	</LinearLayout>
 </LinearLayout>

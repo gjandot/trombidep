@@ -255,6 +255,10 @@ public class DepList extends ListActivity
 				{
 					mDepute.setSexe_H(xpp.getText().equals("H"));
 				}
+				if (element.equals("num_deptmt"))
+				{
+					mDepute.setNumDpt(xpp.getText());
+				}
 				if (element.equals("nom_circo"))
 				{
 					mDepute.setCirco(xpp.getText());
@@ -278,13 +282,14 @@ public class DepList extends ListActivity
 		URL url = new URL(getResources().getString(R.string.url_data));
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
-		conn.setReadTimeout(10000 /* milliseconds */);
-		conn.setConnectTimeout(10000 /* milliseconds */);
+		conn.setReadTimeout(30000 /* milliseconds */);
+		conn.setConnectTimeout(30000 /* milliseconds */);
 		conn.setRequestMethod("GET");
 		conn.setDoInput(true);
+		conn.setInstanceFollowRedirects(true);
 		try {
 			conn.connect();
-			if (conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
+			if (conn.getResponseCode() != HttpURLConnection.HTTP_OK){
 				threadErr = MSG_ERR1;
 				conn.disconnect();
 				/* on n'efface pas le fichier en cache, pour garder les dernières données connues */
