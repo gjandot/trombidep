@@ -2,12 +2,10 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 21
-    buildToolsVersion '25.0.0'
 
     defaultConfig {
         applicationId "fr.gjandot.trombidep"
         minSdkVersion 7
-        targetSdkVersion 21
+        targetSdkVersion 26
     }
-
 }
